@@ -1,13 +1,17 @@
 public class Donor {
     private int donorId;
+    private static int id_gen = 0;
     private String fullName;
     private Donation[] donations;
     private int donationCount = 0;
 
-    Donor() {}
+    Donor() {
+        donorId = id_gen++;
+    }
 
-    Donor(int donorId, String fullName, int count) {
-        this.donorId = donorId;
+    Donor(String fullName, int count) {
+        this();
+//        this.donorId = donorId;
         setFullName(fullName);
         this.donations = new Donation[count];
     }
@@ -36,7 +40,7 @@ public class Donor {
     public void displayDonations() {
         System.out.println("Donations made by " + fullName + ":");
         for (int i = 0; i < donationCount; i++) {
-            donations[i].displayDonationInfo();  // Display each donation's info
+            donations[i].displayDonationInfo();
         }
     }
 }

@@ -38,7 +38,7 @@ public class Charity {
     public void displayDonations() {
         System.out.println("Donations received by " + name + ":");
         for (int i = 0; i < count; i++) {
-            donations[i].displayDonationInfo(); // display each donation
+            donations[i].displayDonationInfo();
         }
     }
 }
