@@ -1,15 +1,34 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Create donations
+        Donation donation1 = new Donation("D001", 100.0);
+        Donation donation2 = new Donation("D002", 200.0);
+        Donation donation3 = new Donation("D003", 50.0);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Create donors and add donations
+        Donor donor1 = new Donor(1, "Alice Smith", 3);
+        donor1.addDonation(donation1);
+        donor1.addDonation(donation2);
+        donor1.addDonation(donation3);
+
+        // Display donor information
+        System.out.println("Donor Information:");
+        System.out.println("Donor ID: " + donor1.getDonorId());
+        System.out.println("Full Name: " + donor1.getFullName());
+        donor1.displayDonations();
+
+        // Create a charity
+        Charity charity = new Charity("C001", "Helping Hands", 5);
+
+        // Add donations to charity
+        charity.addDonation(donation1);
+        charity.addDonation(donation2);
+        charity.addDonation(donation3);
+
+        // Display charity information
+        System.out.println("\nCharity Information:");
+        System.out.println("Charity ID: " + charity.getCharityId());
+        System.out.println("Charity Name: " + charity.getName());
+        charity.displayDonations();
     }
 }
