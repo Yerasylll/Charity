@@ -5,22 +5,22 @@ public class Main {
         Donation donation2 = new Donation("N002", 200.0);
         Donation donation3 = new Donation("N003", 110.0);
 
-        // Create donors and add donations
+        // Adding donations to donor
         Donor donor1 = new Donor("Yerasyl Alimbek", 3);
         donor1.addDonation(donation1);
         donor1.addDonation(donation2);
         donor1.addDonation(donation3);
 
-        // Display donor information
+        // Showing donor information
         System.out.println("Donor Information:");
         System.out.println("Donor ID: " + donor1.getDonorId());
         System.out.println("Full Name: " + donor1.getFullName());
         donor1.displayDonations();
 
-        // Create a charity
+        // There is a Charity
         Charity charity = new Charity("C001", "Biz Birgemiz", 5);
 
-        // Add donations to charity
+        // Adding donations to charity
         charity.addDonation(donation1);
         charity.addDonation(donation2);
         charity.addDonation(donation3);
